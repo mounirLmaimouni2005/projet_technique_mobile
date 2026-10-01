@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/*header*/
+header{
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40PX;
+    background-color: rgb(80, 88, 95);
+}
+header .logo{
+    color: white;
+}
+header nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    
+}
+header nav a{
+    color: rgb(163, 154, 244);
+}
+header nav a:hover{
+    color: blue;
+}
+
+/*footer*/
+
+footer{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(80, 88, 95);
+}
+footer p{
+    color: white;
+}
+
+/*acuil page*/
+
+.destinations{
+     padding-top: 20px;
+     padding-bottom: 10px;
+    width: 100%;
+    height: max-content;
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: rgb(206, 214, 222);
+}
+.destinations .destination{
+    width: 290px;
+    height: 220px;
+    border: 2px solid rgb(75, 84, 184);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* add .php*/
+main{
+    display:  flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    margin-top: 100px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+form input ,
+form textarea,
+form select{
+    padding: 10px;
+    font-size: 20px;
+}
+img{
+    width: 200px;
+}
+

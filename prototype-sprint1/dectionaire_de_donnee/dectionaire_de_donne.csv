@@ -1,0 +1,10 @@
+Nom,Signification,Format,Obligatoire,Calculée
+nom_complete_tourguide,Nom complete du tour guide,Texte,oui,Non
+email_tourguide,Adresse email du tour guide,Email,Oui,Non
+mot_de_passe,Mot de passe du tour guide,Mot de passe,Oui,Non
+telephone,Numéro de téléphone du tour guide,Téléphone,Non,Non
+nom_region,Nom de la région,Texte,Oui,Non
+nom_destination,Nom de la destination,Texte,Oui,Non
+description_destination,Description et informations sur la destination,Texte,Oui,Non
+image,Image représentant la destination,Nom de fichier / chemin,Non,Non
+date_publication,Date de publication de la destination,Date/Heure,Oui,Non
