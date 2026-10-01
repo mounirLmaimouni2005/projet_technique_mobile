@@ -2,41 +2,48 @@
  
  require "../classes/Destination.php";
 
-$method = $_SERVER["REQUEST_METHOD"];
+    $method = $_SERVER["REQUEST_METHOD"];
 
 
-$file =" ../data/Destinations.json";
+    $file ="../data/Destinations.json";
 
-// check if request method is Get and get data;
-if($method === "GET"){
-    $getData = new GetallData("../data/Destinations.json");
-       $data =  $getData->getAllData();
-        
-       header("content-type:application/json");
-       echo json_encode($data);
-}
+    // check if request method is Get and get data;
+    if($method === "GET"){
+        $getData = new GetallData("../data/Destinations.json");
+        $data =  $getData->getAllData();
+            
+        header("content-type:application/json");
+        echo json_encode($data);
+    }
 
 
 
 // check if method is post and add data to json file;
-if($method === 'POST'){
+    if($method === 'POST'){
 
-    $ids = array_column($data , 'id');
-    $id = max($ids) + 1;
+        $getData = new GetallData("../data/Destinations.json");
+        $data = $getData->getAllData();
 
-   $input = file_get_contents("php://input");
-   $dataRqst = json_decode($input , true);
+        $ids = array_column($data, 'id');
+        $id = max($ids) + 1;
 
-   $nom = $dataRqst['nom'];
-   $description = $dataRqst['description'];
-   $region = $dataRqst['region'];
+        $input = file_get_contents("php://input");
+        $dataRqst = json_decode($input, true);
 
-  $addDestinationCls = new AddDestinition($id , $nom , $description , $region ,$file);
-  $addDestinationCls->AddDestinetion();
+        $nom = $dataRqst['nom'];
+        $description = $dataRqst['description'];
+        $region = $dataRqst['region'];
 
+        $addDestinationCls = new AddDestinition(
+            $id,
+            $nom,
+            $description,
+            $region,
+            $file
+        );
 
-}
-
+        $addDestinationCls->AddDestinetion();
+    }
 
 
 

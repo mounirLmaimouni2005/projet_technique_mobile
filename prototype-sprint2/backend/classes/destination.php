@@ -49,23 +49,26 @@ class AddDestinition extends GetAllData{
  
    public function AddDestinetion(){
 
-        $data = parent::getAllData();
-        !is_array($data) ? exit('you have a problem $data is not array') : $data = [];
-        
-        $requestData = [
-         'id' => $this -> id,
-         'nom' => $this -> nom,
-         'description' => $this -> description,
-         'region' => $this -> region
+       $data = parent::getAllData();
+
+         if (!is_array($data)) {
+            exit('you have a problem $data is not array');
+         }
+
+         $requestData = [
+            'id' => $this->id,
+            'nom' => $this->nom,
+            'description' => $this->description,
+            'region' => $this->region
          ];
-       
-      file_put_contents($this->file , json_encode($requestData));
 
+         $data[] = $requestData;
+
+         file_put_contents($this->file, json_encode($data));
+            
    }
-   
+
 }
-
-
 
 
 
