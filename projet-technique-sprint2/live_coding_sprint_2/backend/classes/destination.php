@@ -19,7 +19,8 @@ class GetAllDestinationData{
 
 
 
-class  Adddestination extends GetAllDestinationData {
+// class add destination
+class  Addestination extends GetAllDestinationData {
 
    
    public $id;
@@ -28,6 +29,8 @@ class  Adddestination extends GetAllDestinationData {
    public $region;
 
 
+
+   //construct function
    public function __construct($id , $nom , $description , $region , $file){
         $this->id = $id;
         $this->nom = $nom;
@@ -39,46 +42,25 @@ class  Adddestination extends GetAllDestinationData {
 
 
 
-public function addDestination(){
-    
-     $getdata = parent::gettData();
-     
-     
-     $destination = [
-        'id' => $this -> id,
-        'nom' => $this -> nom,
-        'description' => $this -> description,
-        'region' => $this -> region
-     ];
+    //function for add destination
+    public function addDestination(){
+        
+        $getdata = parent::gettData();
+        
+        
+        $destination = [
+            'id' => $this -> id,
+            'nom' => $this -> nom,
+            'description' => $this -> description,
+            'region' => $this -> region
+        ];
 
-      $getdata[] = $destination;
-      file_put_contents($this->file, json_encode($getdata , JSON_PRETTY_PRINT));
+        $getdata[] = $destination;
+        file_put_contents($this->file, json_encode($getdata , JSON_PRETTY_PRINT));
+
+    }
 
 }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

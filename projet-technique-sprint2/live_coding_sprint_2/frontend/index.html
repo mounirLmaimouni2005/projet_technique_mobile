@@ -1,42 +1,344 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Destination Management</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+
+<body class="min-h-screen bg-[#f7f7f6] text-[#18181b] antialiased">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 h-[64px] border-b border-[#e4e4e2] bg-white">
+
+        <div class="h-full px-6 flex items-center justify-between">
+
+            <div class="flex items-center gap-8">
+
+                <div class="flex items-center gap-2.5">
+                    <div class="h-7 w-7 bg-[#18181b] flex items-center justify-center">
+                        <span class="text-[11px] font-semibold text-white">D</span>
+                    </div>
+
+                    <span class="text-[14px] font-semibold tracking-[-0.01em]">
+                        Destination Guide
+                    </span>
+                </div>
+
+                <div class="hidden md:flex items-center gap-2 text-[13px]">
+                    <span class="text-[#a1a1aa]">Management</span>
+                    <span class="text-[#d4d4d4]">/</span>
+                    <span class="font-medium text-[#52525b]">
+                        Destinations
+                    </span>
+                </div>
+
+            </div>
 
 
-    <form action="">
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom">
-        <br>
-        <br>
-        <label for="description">Description:</label>
-        <input type="text" id="description">
-        <br>
-        <br>
-        <label for="region">Region :</label>
-        <input type="text" id="region">
-        <br>
-        <br>
-        <button type="submit" id="btnSubmit"> ajouter destination</button>
-        <button type="reset">reast</button>
-    </form>
-<br>
-<br>
+            <div class="flex items-center gap-3">
 
-<table border="1">
-    <tr>
-        <th>id</th>
-        <th>Nom</th>
-        <th>Description</th>
-        <th>Region</th>
-    </tr>
-    <tbody id="tbody"></tbody>
-</table>
+                <div class="hidden sm:block text-right">
+                    <p class="text-[12px] font-medium text-[#27272a]">
+                        Administrator
+                    </p>
+
+                    <p class="text-[11px] text-[#a1a1aa]">
+                        Management
+                    </p>
+                </div>
+
+                <div class="h-8 w-8 rounded-full bg-[#27272a] flex items-center justify-center">
+                    <span class="text-[11px] font-medium text-white">
+                        A
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <div class="flex min-h-[calc(100vh-64px)]">
+
+
+        <!-- Sidebar -->
+        <aside class="hidden lg:block w-[230px] shrink-0 border-r border-[#e4e4e2] bg-white">
+
+            <div class="px-4 py-6">
+
+                <p class="px-3 mb-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a1a1aa]">
+                    Workspace
+                </p>
+
+
+                <nav class="space-y-0.5">
+
+                    <a href="#"
+                       class="group flex items-center gap-3 px-3 py-2 text-[13px] font-medium text-[#18181b] bg-[#f4f4f3]">
+
+                        <span class="h-1.5 w-1.5 bg-[#18181b]"></span>
+
+                        Destinations
+
+                    </a>
+
+
+                    <a href="#"
+                       class="group flex items-center gap-3 px-3 py-2 text-[13px] text-[#71717a] hover:text-[#18181b] hover:bg-[#fafafa] transition">
+
+                        <span class="h-1.5 w-1.5 bg-[#d4d4d4] group-hover:bg-[#71717a]"></span>
+
+                        Regions
+
+                    </a>
+
+                </nav>
+
+
+                <div class="mt-8 pt-6 border-t border-[#eeeeec]">
+
+                    <p class="px-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a1a1aa]">
+                        System
+                    </p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main -->
+        <main class="flex-1 min-w-0">
+
+            <div class="max-w-[1400px] mx-auto px-5 py-8 md:px-8 lg:px-10">
+
+
+                <!-- Page Header -->
+                <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-8">
+
+                    <div>
+
+                        <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-[#a1a1aa] mb-2">
+                            Content
+                        </p>
+
+                        <h1 class="text-[25px] leading-tight font-semibold tracking-[-0.025em] text-[#18181b]">
+                            Destinations
+                        </h1>
+
+                        <p class="mt-1.5 text-[13px] text-[#71717a]">
+                            Manage the destinations available in your guide.
+                        </p>
+
+                    </div>
+
+
+                    <div class="text-[12px] text-[#a1a1aa]">
+                        Destination management
+                    </div>
+
+                </div>
+
+
+                <!-- Content Grid -->
+                <div class="grid grid-cols-1 xl:grid-cols-[360px_minmax(0,1fr)] gap-5 items-start">
+
+
+                    <!-- Form -->
+                    <section class="bg-white border border-[#e4e4e2] shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+
+                        <div class="px-5 py-4 border-b border-[#eeeeec]">
+
+                            <h2 class="text-[13px] font-semibold text-[#27272a]">
+                                New destination
+                            </h2>
+
+                            <p class="mt-1 text-[12px] leading-5 text-[#a1a1aa]">
+                                Add a destination to the guide.
+                            </p>
+
+                        </div>
+
+
+                        <div class="p-5">
+
+                            <form action="" class="space-y-5">
+
+
+                                <div>
+
+                                    <label for="nom"
+                                           class="block mb-2 text-[12px] font-medium text-[#52525b]">
+                                        Nom
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="nom"
+                                        class="block w-full h-9 px-3 bg-white border border-[#d4d4d4] text-[13px] text-[#18181b] outline-none shadow-none focus:border-[#71717a] focus:ring-1 focus:ring-[#d4d4d4] transition"
+                                    >
+
+                                </div>
+
+
+                                <div>
+
+                                    <label for="description"
+                                           class="block mb-2 text-[12px] font-medium text-[#52525b]">
+                                        Description
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="description"
+                                        class="block w-full h-9 px-3 bg-white border border-[#d4d4d4] text-[13px] text-[#18181b] outline-none shadow-none focus:border-[#71717a] focus:ring-1 focus:ring-[#d4d4d4] transition"
+                                    >
+
+                                </div>
+
+
+                                <div>
+
+                                    <label for="region"
+                                           class="block mb-2 text-[12px] font-medium text-[#52525b]">
+                                        Region
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="region"
+                                        class="block w-full h-9 px-3 bg-white border border-[#d4d4d4] text-[13px] text-[#18181b] outline-none shadow-none focus:border-[#71717a] focus:ring-1 focus:ring-[#d4d4d4] transition"
+                                    >
+
+                                </div>
+
+
+                                <div class="pt-2 flex items-center gap-2">
+
+                                    <button
+                                        type="submit"
+                                        id="btnSubmit"
+                                        class="h-9 px-4 bg-[#18181b] text-white text-[12px] font-medium hover:bg-[#27272a] focus:outline-none focus:ring-2 focus:ring-[#d4d4d4] focus:ring-offset-1 transition"
+                                    >
+                                        Add destination
+                                    </button>
+
+
+                                    <button
+                                        type="reset"
+                                        class="h-9 px-4 bg-white border border-[#d4d4d4] text-[#52525b] text-[12px] font-medium hover:bg-[#fafafa] hover:text-[#27272a] focus:outline-none transition"
+                                    >
+                                        Reset
+                                    </button>
+
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Table -->
+                    <section class="min-w-0 bg-white border border-[#e4e4e2] shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+
+
+                        <div class="px-5 py-4 border-b border-[#eeeeec] flex items-center justify-between">
+
+                            <div>
+
+                                <h2 class="text-[13px] font-semibold text-[#27272a]">
+                                    Destinations
+                                </h2>
+
+                                <p class="mt-1 text-[12px] text-[#a1a1aa]">
+                                    All registered destinations.
+                                </p>
+
+                            </div>
+
+
+                            <div class="hidden sm:block text-[11px] text-[#a1a1aa]">
+                                Records
+                            </div>
+
+                        </div>
+
+
+                        <div class="overflow-x-auto">
+
+                            <table border="1" class="w-full border-collapse text-left">
+
+                                <tr class="bg-[#fafafa] border-b border-[#eeeeec]">
+
+                                    <th class="px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#71717a]">
+                                        ID
+                                    </th>
+
+                                    <th class="px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#71717a]">
+                                        Nom
+                                    </th>
+
+                                    <th class="px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#71717a]">
+                                        Description
+                                    </th>
+
+                                    <th class="px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#71717a]">
+                                        Region
+                                    </th>
+
+                                </tr>
+
+
+                                <tbody
+                                    id="tbody"
+                                    class="divide-y divide-[#eeeeec] text-[13px] text-[#52525b]"
+                                ></tbody>
+
+                            </table>
+
+                        </div>
+
+                    </section>
+
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="border-t border-[#e4e4e2] bg-white">
+
+        <div class="px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+
+            <p class="text-[11px] text-[#a1a1aa]">
+                © 2026 Destination Guide
+            </p>
+
+            <p class="text-[11px] text-[#a1a1aa]">
+                Internal administration
+            </p>
+
+        </div>
+
+    </footer>
+
+
     <script src="script.js"></script>
+
 </body>
 </html>

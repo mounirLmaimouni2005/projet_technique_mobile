@@ -9,7 +9,8 @@ function affichage(){
     })
     .then(reponse =>reponse.json())
     .then(data =>{
-         
+          
+        tbody.innerHTML ="";
         data.forEach(datas => {
             let tr = document.createElement('tr');
              tr.insertAdjacentHTML('beforeend',
@@ -26,17 +27,6 @@ function affichage(){
     
 }
 affichage()
-
-
-
-
-
-
-
-
-
-
-
 
 
 
