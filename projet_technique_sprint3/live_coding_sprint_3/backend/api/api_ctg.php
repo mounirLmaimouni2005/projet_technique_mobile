@@ -1,5 +1,8 @@
 <?php
-require "../classes/classes_ctg.php";
+require_once "../classes/GetAllData.php";
+require_once "../classes/AddData.php";
+
+
 header("Content-type: application/json" );
 
 $file = "../data/data.json";
@@ -9,7 +12,7 @@ $method = $_SERVER["REQUEST_METHOD"];
 //check if request method is get and get data from database;
 if($method == "GET"){
      $getdata= new GetAllData($file);
-     $data = $getdata->getallData();
+     $data = $getdata->GetAllData();
       echo json_encode($data);
 }
 
@@ -18,7 +21,7 @@ if($method == "GET"){
 //check if request method is post and add data to file json;
 if($method == "POST"){
       $getdata2 = new GetAllData($file);
-     $data2  = $getdata2->getallData();
+     $data2  = $getdata2->GetAllData();
 
       $id = array_column($data2 , "id");
       $ids = max($id)+1;
@@ -28,8 +31,8 @@ if($method == "POST"){
       $colour = $PostData["colour"];
       $incon = $PostData["incon"];
 
-    $addData = new AddData($file , $nom, $colour , $incon  , $ids);
-    $addData->addDatajsn();
+    $add = new AddData($file);
+    $add->addData($ids,$nom,$colour,$incon);
 }
 
 
