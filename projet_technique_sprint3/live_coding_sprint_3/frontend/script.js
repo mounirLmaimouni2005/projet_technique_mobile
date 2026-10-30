@@ -1,5 +1,7 @@
 let file = "http://localhost:8000/backend/api/api_ctg.php";
-document.addEventListener("DOMContentLoaded",getallData(file))
+document.addEventListener("DOMContentLoaded" , function(){
+
+
 
 // function getall data 
 
@@ -25,7 +27,7 @@ function getallData(file){
     })
 }
 
-
+ getallData(file);
 
 // add data to file json
 function addData(file){
@@ -37,11 +39,11 @@ function addData(file){
     let colourValue = colour.value;
     let inconValue = incon.value;
 
-    let alldata = [{
+    let alldata = {
         "nom" : nomValue,
         "colour" : colourValue,
         "incon" : inconValue 
-    }]
+    }
       
   fetch(file ,{
      method : "POST",
@@ -50,10 +52,17 @@ function addData(file){
     })
     
     getallData(file);
+
+    nom.value = "";
+    colour.value = "";
+    incon.value = "";
 }
 
 let form = document.getElementById("form-categorie");
 form.addEventListener('submit',function(e){
    e.preventDefault();
    addData(file);
+})
+
+
 })

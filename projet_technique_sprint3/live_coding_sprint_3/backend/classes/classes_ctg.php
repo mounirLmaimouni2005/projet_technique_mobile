@@ -38,10 +38,24 @@ class AddData extends GetAllData{
   
  
  public function addDatajsn(){
-      parent::getallData();
+       $getdata =  parent::getallData();
+
+        
+        
+        $categories = [
+            'id' => $this -> id,
+            'nom' => $this -> nom,
+            'colour' => $this -> colour,
+            'incon' => $this -> incon
+        ];
+
+        $getdata[] = $categories;
+        file_put_contents($this->file, json_encode($getdata , JSON_PRETTY_PRINT));
+
+    }
  }
 
-}
+
 
 
 
