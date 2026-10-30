@@ -124,14 +124,14 @@ function isLoading(loading) {
     let btnText = document.querySelector('#btnText');
     let originalText = "Enregistrer";
     if (loading) {
-        btnText.textContent = "Enregistrement...";
+        btnText.textContent = "Enregistr...";
         btnsubmit.disabled = true;
-        spinner.hidden = false;
+        spinner.classList.remove("hidden");
     } else {
           setTimeout(()=>{
            btnText.textContent = originalText;
             btnsubmit.disabled = false;
-            spinner.hidden = true;
+            spinner.classList.add("hidden");
         },3000)
     }
 }
