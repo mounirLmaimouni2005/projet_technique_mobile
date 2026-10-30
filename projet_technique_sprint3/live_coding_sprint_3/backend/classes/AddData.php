@@ -6,6 +6,7 @@ require_once 'JsonStorage.php';
 
 
 //class add data 
+//
 class AddData{
     public $getdata;
     public $jsondata;
