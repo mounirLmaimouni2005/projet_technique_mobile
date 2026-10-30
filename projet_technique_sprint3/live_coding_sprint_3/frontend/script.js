@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded" , function(){
 
 
 // function getall data 
-
+//
  async function getallData(file){
     try{
         let tbdoy = document.querySelector('#table-categories-body');
