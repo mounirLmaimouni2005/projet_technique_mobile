@@ -79,7 +79,7 @@ async function addData(file){
             colour.value = "";
             incon.value = "";
 
-            toast('category added succese' , 'succese');
+            toast('category added succese' , 'success');
     }catch(Error){
       console.log(Error)
     }finally{
@@ -101,15 +101,19 @@ form.addEventListener('submit',function(e){
 
 
 //function afichage message;
+let toastTimeout;
+
 function toast(message,type){
    let toastdiv = document.querySelector("#toast");
    toastdiv.textContent = message;
 
-   toastdiv.classList = `show ${type}`;
-   toastdiv.className = type ==='succese'? "bg-green-500 text-white p-3 rounded":"bg-red-500 text-white p-3 rounded";
-   setTimeout(()=>{
+   toastdiv.className = `fixed bottom-4 right-4 z-50 text-white p-3 rounded shadow-lg ${
+       type === 'success' ? 'bg-green-500' : 'bg-red-500'
+   }`;
+   clearTimeout(toastTimeout);
+   toastTimeout = setTimeout(()=>{
     toastdiv.textContent = "";
-    toastdiv.classList = "";
+    toastdiv.className = "";
    },3000);
 }
 
@@ -132,6 +136,6 @@ function isLoading(loading) {
            btnText.textContent = originalText;
             btnsubmit.disabled = false;
             spinner.classList.add("hidden");
-        },3000)
+        },1000)
     }
 }
