@@ -1,6 +1,6 @@
 <?php
 
-require_once "JsonStorage.php";
+require_once "../classes/JsonStorage.php";
 
 class CategoryDAO {
 

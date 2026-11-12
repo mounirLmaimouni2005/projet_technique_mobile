@@ -1,8 +1,8 @@
 <?php
 
 require_once __DIR__ . "/../classes/JsonStorage.php";
-require_once __DIR__ . "/../classes/CategoryDAO.php";
-require_once __DIR__ . "/../classes/CategoryService.php";
+require_once __DIR__ . "/../DAO/CategoryDAO.php";
+require_once __DIR__ . "/../service/CategoryService.php";
 
 
 
